@@ -1,3 +1,27 @@
-<h1>
-  {{title}}
-</h1>
+<h1>House Temperature</h1>
+    <div class="outerbox">
+    <tabset>
+        <tab heading="Chart">
+            <div class="chartbuttons btn-group">
+                <button type="button" 
+                    [disabled]="firstPage"
+                    (click)="pageChartBackwards();"
+                    class="btn btn-primary btn-sm">&larr;</button>
+                <button type="button"
+                    [disabled]="lastPage"
+                    (click)="pageChartForwards()" 
+                    class="btn btn-primary btn-sm">&rarr;</button>
+            </div>
+            <div class="innerbox">
+                <my-chart
+                    [chartData]="chartData">
+                </my-chart>
+            </div>
+        </tab>
+        <tab heading="Raw Data">
+            <div class="innerbox">
+                <pre>{{text}}</pre>
+            </div>
+        </tab>
+    </tabset>
+    </div>
